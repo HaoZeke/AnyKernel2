@@ -231,6 +231,9 @@ dump_boot;
 # init.flash.rc
 insert_line init.kitakami.rc "init.pixn.rc" after "import init.kitakami.pwr.rc" "import init.pixn.rc";
 
+# init.performance_profiles.rc
+insert_line init.angler.rc "performance_profiles" after "import init.angler.sensorhub.rc" "import init.performance_profiles.rc";
+
 # Add frandom compatibility
 backup_file ueventd.rc;
 insert_line ueventd.rc "frandom" after "urandom" "/dev/frandom              0666   root       root\n";
