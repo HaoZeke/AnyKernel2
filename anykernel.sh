@@ -3,19 +3,19 @@
 
 ## AnyKernel setup
 # EDIFY properties
-kernel.string=
-do.devicecheck=1
+kernel.string= PixN Kernel by @haozeke
+do.devicecheck=0
 do.initd=0
 do.modules=0
 do.cleanup=1
-device.name1=
-device.name2=
+device.name1=E6683
+device.name2=sumire_dsds
 device.name3=
 device.name4=
 device.name5=
 
 # shell variables
-block=;
+block=/dev/block/bootdevice/by-name/boot;
 is_slot_device=0;
 
 
@@ -33,6 +33,9 @@ chmod -R 755 $ramdisk
 dump_boot;
 
 # begin ramdisk changes
+
+# init.flash.rc
+insert_line init.kitakami.rc "init.pixn.rc" after "import init.kitakami.pwr.rc" "import init.pixn.rc";
 
 # end ramdisk changes
 
